@@ -11,4 +11,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <!-- Emit Razor source generator output to file system for analysis. -->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+  </PropertyGroup>
+
 </Project>
