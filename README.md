@@ -6,3 +6,45 @@
 
 # To Reproduce
 1. (Powershell 7.1.3) `dotnet run --project ./RazorForStatementSuspectedBug1/`.
+2. Expected output at `/` route:
+```
+foreach statement
+Counter: 0
+Counter (captured): 0
+Counter: 1
+Counter (captured): 1
+Counter: 2
+Counter (captured): 2
+Counter: 3
+Counter (captured): 3
+for statement
+Counter: 0
+Counter (captured): 0
+Counter: 1
+Counter (captured): 1
+Counter: 2
+Counter (captured): 2
+Counter: 3
+Counter (captured): 3
+```
+3. Actual output:
+```
+foreach statement
+Counter: 0
+Counter (captured): 0
+Counter: 1
+Counter (captured): 1
+Counter: 2
+Counter (captured): 2
+Counter: 3
+Counter (captured): 3
+for statement
+Counter: 0
+Counter (captured): 4
+Counter: 1
+Counter (captured): 4
+Counter: 2
+Counter (captured): 4
+Counter: 3
+Counter (captured): 4
+```

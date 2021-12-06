@@ -7,3 +7,21 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>foreach statement</h1>
+@foreach (int counter in new[] {0, 1, 2, 3})
+{
+    @($"Counter: {counter}")
+    <br />
+    <ParentComponent>@($"Counter (captured): {counter}")</ParentComponent>
+    <br />
+}
+
+<h1>for statement</h1>
+@for (int counter = 0; counter <= 3; counter++)
+{
+    @($"Counter: {counter}")
+    <br />
+    <ParentComponent>@($"Counter (captured): {counter}")</ParentComponent>
+    <br />
+}
